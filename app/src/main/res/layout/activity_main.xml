@@ -1,18 +1,678 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/search_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/main"
+        android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/main_ic_menu_ffffff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lnSearchBar"
+            android:layout_width="265dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/border_radius"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/main_ic_search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:text="Tâm Ý Salon"
+                android:textColor="@color/text_search" />
+
+            <!--            <ImageView-->
+            <!--                android:layout_width="53dp"-->
+            <!--                android:layout_height="24dp"-->
+            <!--                android:layout_marginLeft="100dp"-->
+            <!--                android:scaleType="fitXY"-->
+            <!--                android:src="@drawable/sale" />-->
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/main_ic_bell" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:background="@color/main" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="7dp"
+                    android:layout_marginTop="-147dp"
+                    android:layout_marginRight="7dp"
+                    app:cardCornerRadius="7dp">
+
+                    <com.smarteist.autoimageslider.SliderView
+                        android:id="@+id/imageSlider"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        app:sliderAnimationDuration="600"
+                        app:sliderAutoCycleDirection="back_and_forth"
+                        app:sliderAutoCycleEnabled="true"
+                        app:sliderCircularHandlerEnabled="true"
+                        app:sliderIndicatorAnimationDuration="600"
+                        app:sliderIndicatorGravity="center_horizontal|bottom"
+                        app:sliderIndicatorMargin="15dp"
+                        app:sliderIndicatorOrientation="horizontal"
+                        app:sliderIndicatorPadding="3dp"
+                        app:sliderIndicatorRadius="2dp"
+                        app:sliderIndicatorSelectedColor="#5A5A5A"
+                        app:sliderIndicatorUnselectedColor="#FFF"
+                        app:sliderScrollTimeInSec="1"
+                        app:sliderStartAutoCycle="true" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="20dp"
+                    android:text="BẠN CẦN KHUYẾN MÃI GÌ?"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/line" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="40dp"
+                    android:text="THƯƠNG HIỆU NỔI BẬT"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="60dp"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/line" />
+
+<!--                <HorizontalScrollView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:scrollbars="none">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:orientation="horizontal">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="100dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                app:cardCornerRadius="3dp">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:background="@drawable/border_cycle_white"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:src="@drawable/brand1" />-->
+
+<!--                                <FrameLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center_vertical"-->
+<!--                                    android:layout_marginTop="15dp">-->
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="10dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:text="Chang Nails"-->
+<!--                                        android:textColor="#262626"-->
+<!--                                        android:textSize="13dp"-->
+<!--                                        android:textStyle="bold" />-->
+
+<!--                                    <LinearLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp"-->
+<!--                                        android:layout_marginTop="27dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:orientation="horizontal">-->
+
+<!--                                        <ImageView-->
+<!--                                            android:layout_width="13dp"-->
+<!--                                            android:layout_height="13dp"-->
+<!--                                            android:src="@drawable/ic_star" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="4.5 "-->
+<!--                                            android:textColor="#595959"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:text="/5"-->
+<!--                                            android:textColor="#d9d9d9"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:layout_marginTop="-10dp"-->
+<!--                                            android:text="."-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="40px" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="khuyến mãi"-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="25px" />-->
+
+<!--                                    </LinearLayout>-->
+
+<!--                                </FrameLayout>-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="100dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                app:cardCornerRadius="3dp">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:src="@drawable/thirtyshine" />-->
+
+<!--                                <FrameLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center_vertical"-->
+<!--                                    android:layout_marginTop="15dp">-->
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="10dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:text="30 Shine"-->
+<!--                                        android:textColor="#262626"-->
+<!--                                        android:textSize="13dp"-->
+<!--                                        android:textStyle="bold" />-->
+
+<!--                                    <LinearLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp"-->
+<!--                                        android:layout_marginTop="27dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:orientation="horizontal">-->
+
+<!--                                        <ImageView-->
+<!--                                            android:layout_width="13dp"-->
+<!--                                            android:layout_height="13dp"-->
+<!--                                            android:src="@drawable/ic_star" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="4.1 "-->
+<!--                                            android:textColor="#595959"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:text="/5"-->
+<!--                                            android:textColor="#d9d9d9"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:layout_marginTop="-10dp"-->
+<!--                                            android:text="."-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="40px" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="khuyến mãi"-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="25px" />-->
+
+<!--                                    </LinearLayout>-->
+
+<!--                                </FrameLayout>-->
+<!--                            </androidx.cardview.widget.CardView>-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="100dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                app:cardCornerRadius="3dp">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:src="@drawable/loli" />-->
+
+<!--                                <FrameLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center_vertical"-->
+<!--                                    android:layout_marginTop="15dp">-->
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="10dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:text="Loli Nalis"-->
+<!--                                        android:textColor="#262626"-->
+<!--                                        android:textSize="13dp"-->
+<!--                                        android:textStyle="bold" />-->
+
+<!--                                    <LinearLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp"-->
+<!--                                        android:layout_marginTop="27dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:orientation="horizontal">-->
+
+<!--                                        <ImageView-->
+<!--                                            android:layout_width="13dp"-->
+<!--                                            android:layout_height="13dp"-->
+<!--                                            android:src="@drawable/ic_star" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="4.8 "-->
+<!--                                            android:textColor="#595959"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:text="/5"-->
+<!--                                            android:textColor="#d9d9d9"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:layout_marginTop="-10dp"-->
+<!--                                            android:text="."-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="40px" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="khuyến mãi"-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="25px" />-->
+
+<!--                                    </LinearLayout>-->
+
+<!--                                </FrameLayout>-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="100dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                app:cardCornerRadius="3dp">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:src="@drawable/gift_salon" />-->
+
+<!--                                <FrameLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center_vertical"-->
+<!--                                    android:layout_marginTop="15dp">-->
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="10dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:text="Gift Salon"-->
+<!--                                        android:textColor="#262626"-->
+<!--                                        android:textSize="13dp"-->
+<!--                                        android:textStyle="bold" />-->
+
+<!--                                    <LinearLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp"-->
+<!--                                        android:layout_marginTop="27dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:orientation="horizontal">-->
+
+<!--                                        <ImageView-->
+<!--                                            android:layout_width="13dp"-->
+<!--                                            android:layout_height="13dp"-->
+<!--                                            android:src="@drawable/ic_star" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="4.5 "-->
+<!--                                            android:textColor="#595959"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:text="/5"-->
+<!--                                            android:textColor="#d9d9d9"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:layout_marginTop="-10dp"-->
+<!--                                            android:text="."-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="40px" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="khuyến mãi"-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="25px" />-->
+
+<!--                                    </LinearLayout>-->
+
+<!--                                </FrameLayout>-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="100dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                app:cardCornerRadius="3dp">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:src="@drawable/loli" />-->
+
+<!--                                <FrameLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center_vertical"-->
+<!--                                    android:layout_marginTop="15dp">-->
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="10dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:text="Loli Nalis"-->
+<!--                                        android:textColor="#262626"-->
+<!--                                        android:textSize="13dp"-->
+<!--                                        android:textStyle="bold" />-->
+
+<!--                                    <LinearLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp"-->
+<!--                                        android:layout_marginTop="27dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:orientation="horizontal">-->
+
+<!--                                        <ImageView-->
+<!--                                            android:layout_width="13dp"-->
+<!--                                            android:layout_height="13dp"-->
+<!--                                            android:src="@drawable/ic_star" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="4.8 "-->
+<!--                                            android:textColor="#595959"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:text="/5"-->
+<!--                                            android:textColor="#d9d9d9"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:layout_marginTop="-10dp"-->
+<!--                                            android:text="."-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="40px" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="khuyến mãi"-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="25px" />-->
+
+<!--                                    </LinearLayout>-->
+
+<!--                                </FrameLayout>-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                            <androidx.cardview.widget.CardView-->
+<!--                                android:layout_width="150dp"-->
+<!--                                android:layout_height="100dp"-->
+<!--                                android:layout_marginLeft="15dp"-->
+<!--                                app:cardCornerRadius="3dp">-->
+
+<!--                                <ImageView-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="match_parent"-->
+<!--                                    android:scaleType="fitXY"-->
+<!--                                    android:src="@drawable/gift_salon" />-->
+
+<!--                                <FrameLayout-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:layout_gravity="center_vertical"-->
+<!--                                    android:layout_marginTop="15dp">-->
+
+<!--                                    <TextView-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="wrap_content"-->
+<!--                                        android:layout_marginTop="10dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:text="Gift Salon"-->
+<!--                                        android:textColor="#262626"-->
+<!--                                        android:textSize="13dp"-->
+<!--                                        android:textStyle="bold" />-->
+
+<!--                                    <LinearLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="20dp"-->
+<!--                                        android:layout_marginTop="27dp"-->
+<!--                                        android:gravity="center_horizontal"-->
+<!--                                        android:orientation="horizontal">-->
+
+<!--                                        <ImageView-->
+<!--                                            android:layout_width="13dp"-->
+<!--                                            android:layout_height="13dp"-->
+<!--                                            android:src="@drawable/ic_star" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="4.5 "-->
+<!--                                            android:textColor="#595959"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:text="/5"-->
+<!--                                            android:textColor="#d9d9d9"-->
+<!--                                            android:textSize="25px"-->
+<!--                                            android:textStyle="bold" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:layout_marginTop="-10dp"-->
+<!--                                            android:text="."-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="40px" />-->
+
+<!--                                        <TextView-->
+<!--                                            android:layout_width="wrap_content"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:layout_marginLeft="5dp"-->
+<!--                                            android:text="khuyến mãi"-->
+<!--                                            android:textColor="#8c8c8c"-->
+<!--                                            android:textSize="25px" />-->
+
+<!--                                    </LinearLayout>-->
+
+<!--                                </FrameLayout>-->
+<!--                            </androidx.cardview.widget.CardView>-->
+
+<!--                        </LinearLayout>-->
+
+
+<!--                    </LinearLayout>-->
+
+<!--                </HorizontalScrollView>-->
+
+            </LinearLayout>
+
+
+        </ScrollView>
+    </RelativeLayout>
+
+</LinearLayout>
