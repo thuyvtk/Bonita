@@ -15,6 +15,8 @@ import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import thuyvtk.activity.R;
+import thuyvtk.activity.adapter.BrandAdapter;
+import thuyvtk.activity.adapter.DiscountAdapter;
 import thuyvtk.activity.adapter.IconAdapters;
 import thuyvtk.activity.adapter.SliderAdapter;
 
@@ -25,6 +27,8 @@ public class MainActivity extends Activity {
     LinearLayout lnSearchBar;
     TextView txtContainer;
     RecyclerView rcIcon;
+    RecyclerView rvBrand;
+    RecyclerView rvDiscount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,10 @@ public class MainActivity extends Activity {
         showThumbnails();
         // show icon
         showIcon();
+        // show brand
+        showBrand();
+        // show discount_filter
+        showDiscount();
     }
 
     private void defineView() {
@@ -48,6 +56,15 @@ public class MainActivity extends Activity {
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rcIcon = findViewById(R.id.rcIcon);
         rcIcon.setLayoutManager(layoutManager);
+        LinearLayoutManager brandLayout
+                = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        rvBrand = findViewById(R.id.rvBrand);
+        rvBrand.setLayoutManager(brandLayout);
+        LinearLayoutManager discountLayout
+                = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        rvDiscount = findViewById(R.id.rvDiscount);
+        rvDiscount.setLayoutManager(discountLayout);
+
     }
 
     private void showThumbnails() {
@@ -88,4 +105,12 @@ public class MainActivity extends Activity {
     private void showIcon() {
         rcIcon.setAdapter(new IconAdapters(getApplicationContext()));
     }
+
+    private void showBrand() {
+        rvBrand.setAdapter(new BrandAdapter(getApplicationContext()));
+    }
+    private void showDiscount() {
+        rvDiscount.setAdapter(new DiscountAdapter(getApplicationContext()));
+    }
+
 }
