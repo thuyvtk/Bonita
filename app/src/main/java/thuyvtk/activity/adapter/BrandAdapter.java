@@ -16,12 +16,18 @@ public class BrandAdapter extends RecyclerView.Adapter<BrandAdapter.MyViewHolder
 
     private Context context;
     private Integer[] images = {
-            R.drawable.brand1,
-            R.drawable.thirtyshine,
-            R.drawable.loli,
-            R.drawable.gift_salon,
-            R.drawable.farther,
-            R.drawable.men_baber,
+//            R.drawable.brand1,
+//            R.drawable.thirtyshine,
+//            R.drawable.loli,
+//            R.drawable.gift_salon,
+//            R.drawable.farther,
+//            R.drawable.men_baber,
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_background,
+            R.drawable.ic_launcher_background,
     };
 
     private String[] names = {

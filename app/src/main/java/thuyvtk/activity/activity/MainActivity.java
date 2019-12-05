@@ -1,7 +1,10 @@
 package thuyvtk.activity.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +32,7 @@ public class MainActivity extends Activity {
     RecyclerView rcIcon;
     RecyclerView rvBrand;
     RecyclerView rvDiscount;
+    ImageView imgNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         defineView();
 
+        // notification
+        openNotificationPage();
         // show thumnail
         showThumbnails();
         // show icon
@@ -46,11 +52,22 @@ public class MainActivity extends Activity {
         showDiscount();
     }
 
+    private void openNotificationPage() {
+        imgNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NotificationActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     private void defineView() {
         imageSlider = findViewById(R.id.imageSlider);
         search_bar_main = findViewById(R.id.search_bar_main);
         lnSearchBar = findViewById(R.id.lnSearchBar);
         txtContainer = findViewById(R.id.txtContainer);
+        imgNotification = findViewById(R.id.imgNotification);
 
         LinearLayoutManager layoutManager
                 = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);

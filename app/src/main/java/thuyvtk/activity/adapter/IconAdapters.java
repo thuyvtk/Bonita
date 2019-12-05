@@ -21,6 +21,11 @@ public class IconAdapters extends RecyclerView.Adapter<IconAdapters.MyViewHolder
             R.drawable.ic_nail_polish,
             R.drawable.ic_spa,
             R.drawable.ic_makeup
+//            R.drawable.ic_launcher_background,
+//            R.drawable.ic_launcher_background,
+//            R.drawable.ic_launcher_background,
+//            R.drawable.ic_launcher_background,
+//            R.drawable.ic_launcher_background,
     };
 
     private String[]  listName = {
